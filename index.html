@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accenttalk Academy: Communication Mastery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PAGE 1: Registration Form Container -->
+    <div id="form-container">
+        <h2>Accenttalk Academy: Communication Mastery</h2>
+        <p>Fill out the details below to secure your spot:</p>
+
+        <form id="webinarForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfIRnLoz8YZEdlccpT8wgDX2slkTJHMQ5hwB5YAM0WfDUkGAQ/formResponse" method="POST" target="hidden_iframe">
+            
+            <!-- Full Name -->
+            <input type="text" name="entry.716130858" placeholder="Full Name" required>
+
+            <!-- Gmail Address Validation -->
+            <input type="email" name="entry.284645034" placeholder="Gmail Address (e.g. name@gmail.com)" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Please enter a valid Gmail address ending in @gmail.com" required>
+
+            <!-- Merged Phone & Country Group -->
+            <div class="phone-group">
+                <select name="country_code" id="phoneCountryCode" onchange="syncCountryAndCode(this)">
+                    <option value="+91" data-country="India">🇮🇳 +91</option>
+                    <option value="+1" data-country="United States">🇺🇸 +1</option>
+                    <option value="+44" data-country="United Kingdom">🇬🇧 +44</option>
+                    <option value="+61" data-country="Australia">🇦🇺 +61</option>
+                    <option value="+971" data-country="United Arab Emirates">🇦🇪 +971</option>
+                    <option value="+49" data-country="Germany">🇩🇪 +49</option>
+                    <option value="+33" data-country="France">🇫🇷 +33</option>
+                    <option value="+65" data-country="Singapore">🇸🇬 +65</option>
+                    <option value="Other" data-country="Other">🌐 Other</option>
+                </select>
+                <input type="tel" name="entry.1426580060" placeholder="Enter phone number" pattern="[0-9]{10,15}" title="Please enter a valid phone number with 10 to 15 digits (no spaces or symbols)." required>
+            </div>
+
+            <!-- Conditional Input if 'Other' is selected -->
+            <input type="text" id="customCountryInput" name="custom_country" placeholder="Enter Country & Code (e.g., +81 Japan)" style="display: none; margin-bottom: 16px;">
+
+            <!-- Country Selection -->
+            <select name="entry.754249041" required>
+                <option value="" disabled selected>Select Your Country</option>
+                <option value="India">India</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Australia">Australia</option>
+                <option value="United Arab Emirates">United Arab Emirates</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Previous Masterclass Attendance -->
+            <select name="entry.1378446917" required>
+                <option value="" disabled selected>Did you attend the previous live session?</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Profession Selection -->
+            <select name="entry.928849682" id="professionSelect" required onchange="checkProfession(this)">
+                <option value="" disabled selected>Select Your Profession</option>
+                <option value="Student / Fresher">Student / Fresher</option>
+                <option value="Corporate / IT Professional">Corporate / IT Professional</option>
+                <option value="Sales / Working Professional">Sales / Working Professional</option>
+                <option value="Business Owner">Business Owner</option>
+                <option value="Freelancer">Freelancer</option>
+                <option value="Homemaker">Homemaker</option>
+                <option value="Teacher / Educator">Teacher / Educator</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="text" id="otherProfessionInput" placeholder="Please specify your profession" style="display: none;">
+            
+            <!-- Primary Goal / Communication Challenge -->
+            <input type="text" name="entry.1497671645" placeholder="Your biggest communication challenge?" required>
+            
+            <button type="submit">Register Now</button>
+        </form>
+    </div>
+
+    <!-- PAGE 2: Thank You & WhatsApp Redirect Container -->
+    <div id="thankyou-container" style="display: none;">
+        <h2>You're Registered! 🎉</h2>
+        <p>Thank you for joining. We have noted your details and sent confirmation info.</p>
+        <p>Click below to join our exclusive WhatsApp group:</p>
+        <a href="https://chat.whatsapp.com/Ij9wQE4bQvG0EkJmMnGRsI" target="_blank">
+            <button type="button">Join WhatsApp Group Now</button>
+        </a>
+    </div>
+
+    <!-- Hidden iframe for silent background submission -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <script src="script.js"></script>
+    <script>
+        const formForm = document.getElementById('webinarForm');
+        
+        formForm.addEventListener('submit', function() {
+            setTimeout(function() {
+                document.getElementById('form-container').style.display = 'none';
+                document.getElementById('thankyou-container').style.display = 'block';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

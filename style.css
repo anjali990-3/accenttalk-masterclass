@@ -1,0 +1,167 @@
+body {
+    /* Colorful gradient base with floating glowing circles to showcase the glass blur */
+    background: 
+        radial-gradient(circle at 20% 30%, #ff8da1 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #6D2932 0%, transparent 50%),
+        linear-gradient(135deg, #C7B7A3, #E8D8C4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+#form-container, #thankyou-container {
+    /* High-transparency frosted glass */
+    background: rgba(232, 216, 196, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(86, 28, 36, 0.25);
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap');
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #561C24;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+p {
+    color: #6D2932;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input, select {
+    background-color: #FFFFFF;
+    color: #561C24;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    border: 1px solid #C7B7A3;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input::placeholder, select:invalid {
+    color: #998877;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #561C24;
+    box-shadow: 0 0 0 3px rgba(109, 41, 50, 0.2);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23561C24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+}
+
+.phone-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.phone-group select {
+    flex: 0 0 120px;
+    margin-bottom: 0;
+    background-color: #FFFFFF;
+    color: #561C24;
+    padding: 14px 12px;
+    font-size: 15px;
+    border: 1px solid #C7B7A3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23561C24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px;
+}
+
+.phone-group input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+button {
+    background-color: #561C24;
+    color: #E8D8C4;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 8px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #6D2932;
+}
+
+button:active {
+    transform: scale(0.98);
+    
+}
+#thankyou-container button {
+    background-color: #561C24;
+    color: #E8D8C4;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#thankyou-container button:hover {
+    background-color: #3e1319;
+}
+#thankyou-container {
+    text-align: center;
+}
+#thankyou-container p {
+    color: #6D2932;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
