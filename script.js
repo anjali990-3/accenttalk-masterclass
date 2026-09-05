@@ -22,6 +22,20 @@ function syncCountryAndCode(selectElement) {
         }
     }
 }
+function checkProfession(selectElement) {
+    const otherInput = document.getElementById('otherProfessionInput');
+    
+    if (selectElement.value === 'Other') {
+        otherInput.style.display = 'block';
+        otherInput.required = true;
+        selectElement.removeAttribute('name'); 
+    } else {
+        otherInput.style.display = 'none';
+        otherInput.required = false;
+        otherInput.value = '';
+        selectElement.setAttribute('name', 'entry.928849682'); 
+    }
+}
 
 const webinarForm = document.getElementById('webinarForm');
 
