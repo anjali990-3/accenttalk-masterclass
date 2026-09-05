@@ -1,16 +1,25 @@
-function checkProfession(selectElement) {
-    const otherInput = document.getElementById('otherProfessionInput');
-    
-    if (selectElement.value === 'Other') {
-        otherInput.style.display = 'block';
-        otherInput.required = true;
-        // Temporarily disable name on the dropdown so only the custom text field submits to Google Forms
-        selectElement.removeAttribute('name'); 
+function syncCountryAndCode(selectElement) {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    const targetCountryName = selectedOption.getAttribute('data-country');
+    const countryDropdown = document.querySelector('select[name="entry.754249041"]');
+    const customInput = document.getElementById('customCountryInput');
+
+    if (targetCountryName === 'Other') {
+        countryDropdown.value = 'Other';
+        customInput.style.display = 'block';
+        customInput.required = true;
     } else {
-        otherInput.style.display = 'none';
-        otherInput.required = false;
-        otherInput.value = ''; // Clear text if changed
-        selectElement.setAttribute('name', 'entry.928849682'); // Restore name attribute to dropdown
+        customInput.style.display = 'none';
+        customInput.required = false;
+        customInput.value = '';
+        
+        // Automatically selects matching country in the lower dropdown
+        for (let option of countryDropdown.options) {
+            if (option.value === targetCountryName) {
+                countryDropdown.value = targetCountryName;
+                break;
+            }
+        }
     }
 }
 
