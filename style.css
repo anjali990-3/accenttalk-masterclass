@@ -177,7 +177,6 @@ button:active {
     position: relative;
     display: inline-block;
 }
-
 .sub-heading::after {
     content: "✨";
     position: absolute;
